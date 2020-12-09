@@ -1,0 +1,26 @@
+init:
+  LDA r2
+  STA cnt
+
+  LDA N0
+  STA r2
+loop:
+  LDA r2
+  ADD r1
+  STA r2
+
+  LDA cnt
+  SUB N1
+  STA cnt
+  BRZ exit
+  BRA loop
+exit:
+  LDA r2
+  HLT
+
+
+r1: 16
+r2: 125
+cnt: 0
+N1: 1
+N0: 0

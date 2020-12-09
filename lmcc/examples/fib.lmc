@@ -1,0 +1,32 @@
+fib:
+  // tmp = f1 + t2
+  LDA f1
+  ADD f2
+  STA tmp
+
+  // f1 = f2
+  LDA f2
+  STA f1
+
+  // f2 = tmp
+  LDA tmp
+  STA f2
+
+  // cnt = cnt - 1
+  LDA cnt
+  SUB N1
+  STA cnt
+
+  // if cnt = 0 -> goto exit;
+  BRZ exit
+  // else -> goto fib;
+  BRA fib
+exit:
+  // load highest fib into acc, exit
+  LDA f2
+  HLT
+f1: 1
+f2: 1
+cnt: 6
+tmp: 0 
+N1: 1

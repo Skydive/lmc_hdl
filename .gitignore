@@ -1,0 +1,4 @@
+lmcc/Cargo.lock
+lmcc/target/*
+obj_dir/*
+test
